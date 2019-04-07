@@ -5,7 +5,7 @@
 /// The include files for NPP
 ///
 #include <npp.h>
-#include <Exceptions.h>
+// #include <Exceptions.h>
 
 #endif // CLASS2_KERNEL_H
 
