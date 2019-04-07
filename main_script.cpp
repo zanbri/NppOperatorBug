@@ -12,15 +12,6 @@
 #include <typeinfo>
 
 ///
-/// The include files for OpenCV
-///
-#include "opencv2/core.hpp"
-#include "opencv2/imgproc.hpp"
-#include "opencv2/highgui.hpp"
-#include "opencv2/calib3d.hpp"
-#include "opencv2/videoio.hpp"
-
-///
 /// The include files for CUDA
 ///
 #include <cuda_runtime.h>
@@ -41,23 +32,16 @@ int main( int argc, char *argv[] )
 
     //----------------------------------------------------------------------
 
-    ///
-    /// Create frame
-    ///
-    cv::Mat h_iImage( 100, 100, CV_8UC3 );
-    cv::randu( h_iImage, cv::Scalar(0, 0, 0), cv::Scalar(255, 255, 255) );
-
-    const int srcStep = (int)h_iImage.step;
-    const int srcCols = (int)h_iImage.cols;
-    const int srcRows = (int)h_iImage.rows;
-
     //
     // Allocate memory for frame
     //
-    const unsigned int imageFootprint = h_iImage.step * h_iImage.rows;
+    const int srcRows = 100;
+    const int srcCols = 100;
+    const int srcStep = 3 * srcCols;
+
+    const unsigned int srcFootprint = srcStep * srcRows;
     uint8_t *d_iImage = nullptr;
-    checkCudaErrors( cudaMalloc( (void**)&d_iImage, imageFootprint ) );
-    checkCudaErrors( cudaMemcpy( d_iImage, h_iImage.data, imageFootprint, cudaMemcpyHostToDevice ) );
+    checkCudaErrors( cudaMalloc( (void**)&d_iImage, srcFootprint ) );
 
     //
     // Allocate memory for mean values
