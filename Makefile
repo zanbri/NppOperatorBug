@@ -21,12 +21,7 @@ CFLAGS	= -gencode arch=compute_30,code=sm_30 \
 		  --fmad=false \
 		  -O3 -std=c++11
 
-CPP_SRCS	= main_script.cpp \
-			  class1.cpp \
-			  class2.cpp
-
-CPP_HDRS	= class1.h \
-			  class2.h
+CPP_SRCS	= main_script.cpp
 
 CU_SRCS		= class1_kernel.cu \
 			  class2_kernel.cu
