@@ -13,7 +13,6 @@ INCLUDES   += -I$(CUDA_LIB_PATH)/common/UtilNPP # npp
 
 LIBRARIES   = -lpng -lm
 LIBRARIES  += -lculibos -lnppc -lnppial -lnppicc -lnppidei -lnppif -lnppig -lnppim -lnppist -lnppisu -lnppitc # npp
-LIBRARIES  += `pkg-config --cflags --libs opencv` # opencv
 
 CC		= nvcc
 CFLAGS	= -gencode arch=compute_30,code=sm_30 \
