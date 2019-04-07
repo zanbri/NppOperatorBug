@@ -8,8 +8,7 @@
 CUDA_PATH     = /usr/local/cuda
 CUDA_LIB_PATH = $(CUDA_PATH)/samples/7_CUDALibraries
 
-INCLUDES    = -I$(CUDA_PATH)/samples/common/inc # cuda
-INCLUDES   += -I$(CUDA_LIB_PATH)/common/UtilNPP # npp
+INCLUDES    = -I$(CUDA_LIB_PATH)/common/UtilNPP # npp
 
 LIBRARIES   = -lpng -lm
 LIBRARIES  += -lculibos -lnppc -lnppial -lnppicc -lnppidei -lnppif -lnppig -lnppim -lnppist -lnppisu -lnppitc # npp

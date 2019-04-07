@@ -1,7 +1,3 @@
-////
-//// The kernel functions for an class2
-////
-
 ///
 /// The include files for class2
 ///

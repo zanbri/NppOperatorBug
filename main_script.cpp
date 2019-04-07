@@ -3,22 +3,6 @@
 //// 
 
 ///
-/// The standard include files
-///
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <typeinfo>
-
-///
-/// The include files for CUDA
-///
-#include <cuda_runtime.h>
-#include <helper_functions.h>
-#include <helper_cuda.h>
-
-///
 /// The include files for image filtering
 ///
 #include "class1_kernel.h"
